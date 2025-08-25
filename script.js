@@ -13,7 +13,7 @@ document.getElementById('loginBtn').addEventListener('click',
         console.log(mobileNumberValueConverted,pinNumberValueConverted)
 
         if(mobileNumberValueConverted===mobileNumber && pinNumberValueConverted===pinNumber){
-            window.location.href="/home.html"
+            window.location.href="/addMoney.html"
         }
         else{
             alert("Invalid Credentials")

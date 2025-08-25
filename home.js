@@ -49,3 +49,42 @@ document.getElementById('addMoney').addEventListener('click', function(e){
     const totalNewAvailableBalance = amount + availableBalance
     document.getElementById('balance').innerText = totalNewAvailableBalance
    })
+// cash out  money feature
+document.getElementById("withdraw-money-btn").addEventListener('click',function(e){
+    e.preventDefault()
+    const amount = parseInt(document.getElementById("WithdrawAmount").value)
+    const availableBalance =parseInt(document.getElementById("balance").innerText)
+    const WithdrawPassword =parseInt(document.getElementById("WithdrawPassword").value)
+    const bankAccountNumber =parseInt(document.getElementById("bankAccountNumber").value)
+
+    const totalNewAvailableBalance = availableBalance - amount
+    console.log(totalNewAvailableBalance)
+     if(bankAccount.length<11){
+        alert("please provide valid account number")
+        return;
+    }
+
+    if(WithdrawPassword !==validPin){
+         alert("please provide valid Pin")
+        return;
+    }
+    if(bankAccountNumber!=validBankAccountNumber){
+         alert("please provide valid account number")
+        return;
+    }
+    document.getElementById("balance").innerText = totalNewAvailableBalance
+})
+
+//    toggling features
+
+     document.getElementById("add-money-btn").addEventListener('click', function(){
+            document.getElementById("cash-out").style.display="none"
+            document.getElementById("latest-payment").style.display="none"
+            document.getElementById("add-money").style.display="block"
+        })
+
+        document.getElementById("cashout-btn").addEventListener('click', function(){
+            document.getElementById("add-money").style.display="none"
+            document.getElementById("latest-payment").style.display="none"
+            document.getElementById("cash-out").style.display="block"
+        })
