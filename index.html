@@ -11,13 +11,15 @@
     <form action="" class=" rounded-[32px] flex flex-col gap-[16px] p-[32px] bg-white">
         <div class="user-number flex flex-col gap-[12px]">
             <h4 class="font-medium text-[16px]">Mobile Number</h4>
-            <input type="text" placeholder="Enter Your Number" class="input bg-[#F4F5F7] text-[16px] font-thin rounded-[32px] border-none h-[52px] w-[338px] indent-[20px]" />
+            <input type="text" id="mobileNumber" placeholder="Enter Your Number" class="input bg-[#F4F5F7] text-[16px] font-thin rounded-[32px] border-none h-[52px] w-[338px] indent-[20px]" />
         </div>
         <div class="user-password  flex flex-col gap-[12px]">
             <h4 class="font-medium text-[16px]">Enter your 4 Digit Pin</h4>
-            <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#F4F5F7] text-[16px] font-thin  rounded-[32px] border-none h-[52px] w-[338px] indent-[20px]" />
+            <input type="text" id="pinNumber" placeholder="Enter 4 Digit Pin" class="input bg-[#F4F5F7] text-[16px] font-thin  rounded-[32px] border-none h-[52px] w-[338px] indent-[20px]" />
         </div>
-        <button class="w-[338px] h-[52px] bg-[#0874F2] rounded-[32px] text-[20px] text-white font-medium ">Login</button>
+        <button type="button" id="loginBtn" class="w-[338px] h-[52px] bg-[#0874F2] rounded-[32px] text-[20px] text-white font-medium ">Login</button>
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
