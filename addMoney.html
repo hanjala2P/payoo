@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>add money</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,8 +13,8 @@
       <div class="flex gap-[4px] items-center justify-center">
         <img class="h-[32px] w-[32px]" src="assets/Group.png" alt="">
         <div>
-            <h2 class="font-bold  text-[#080808] text-[18px]">3930000</h2>
-            <h3 class="text-[#080808] text-[14px]">md hanjala</h3>
+            <h2 class="font-bold  text-[#080808] text-[18px]">$<span id="balance">3930000</span></h2>
+            <h3 class="text-[#080808] text-[14px]">Available Balance</h3>
         </div>
     </div>
     <div>
@@ -29,7 +29,7 @@
     <p class="text-gray-600">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
   </section>
   <section class=" grid grid-cols-3 max-w-lg mx-auto px-4 gap-[16px] mt-[24px] ">
-    <div id="addMoney" class="flex flex-col gap-[8px] items-center justify-center border border-blue-500 bg-blue-100 p-[20px_10px] rounded-[12px]">
+    <div Zz class="flex flex-col gap-[8px] items-center justify-center border border-blue-500 bg-blue-100 p-[20px_10px] rounded-[12px]">
         <img class="w-[24px] h-[24px]" src="assets/wallet1.png" alt="">
         <p>Add Money</p>
     </div>
@@ -67,7 +67,7 @@
        <form class="flex flex-col gap-[16px]" action="">
             <div class="flex flex-col gap-[12px]">
                 <h1 class="font-medium text-[16px]">Select a Bank</h1>
-             <select class="select border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px]">
+             <select id="bank" class="select border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px]">
                  <option disabled selected class="bg-white">Select a Bank</option>
                  <option>Islami Bank</option>
                  <option>Janota Bank</option>
@@ -76,20 +76,22 @@
             </div>
             <div class="flex flex-col gap-[12px]">
                 <h1 class="font-medium text-[16px]">Bank Account Number</h1>
-                <input type="text" class="input border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px] text-gray-600" placeholder="Enter 11 digit account number ">
+                <input id="bankAccount" type="text" class="input border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px] text-gray-600" placeholder="Enter 11 digit account number ">
             </div>
             <div class="flex flex-col gap-[12px]">
                 <h1 class="font-medium text-[16px]">Amount Number</h1>
-                <input type="text" class="input border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px] text-gray-600" placeholder="Add Amount to withdraw ">
+                <input id="addAmount" type="text" class="input border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px] text-gray-600" placeholder="Add Amount to withdraw ">
             </div>
             <div class="flex flex-col gap-[12px]">
                 <h1 class="font-medium text-[16px]">Pin Number</h1>
-                <input type="password" class="input border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px] text-gray-600" placeholder="Enter 4 digit pin number">
+                <input id="password" type="password" class="input border-none rounded-[32px] h-[52px] w-[354px] bg-gray-200 text-gray-700 indent-[12px] text-gray-600" placeholder="Enter 4 digit pin number">
             </div>
-            <button class="btn w-[354px] h-[52px] bg-[#0874F2] rounded-[32px] text-[18px] text-white font-medium " type="submit">Add Money</button>
+            <button type="button" id="addMoney" class="btn w-[354px] h-[52px] bg-[#0874F2] rounded-[32px] text-[18px] text-white font-medium " type="submit">Add Money</button>
        </form>
  </div>
 
    </section>
+
+   <script src="home.js"></script>r
 </body>
 </html>
