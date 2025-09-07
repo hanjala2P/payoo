@@ -103,17 +103,29 @@ document.getElementById("withdraw-money-btn").addEventListener('click',function(
     // document.getElementById("balance").innerText = totalNewAvailableBalance
     setInnerText(totalNewAvailableBalance)
 })
+// toggleing reusable function code
+
+function handleToggle (id){
+    const allServices = document.getElementsByClassName("services")
+
+            for( const services of allServices ){
+                services.style.display ="none"
+        }
+        document.getElementById(id).style.display ="block"
+}
+
 
 //    toggling features
 
      document.getElementById("add-money-btn").addEventListener('click', function(){
-            document.getElementById("cash-out").style.display="none"
-            document.getElementById("latest-payment").style.display="none"
-            document.getElementById("add-money").style.display="block"
-        })
+             handleToggle('add-money')
+    })
 
         document.getElementById("cashout-btn").addEventListener('click', function(){
-            document.getElementById("add-money").style.display="none"
-            document.getElementById("latest-payment").style.display="none"
-            document.getElementById("cash-out").style.display="block"
+            handleToggle('cash-out')
         })
+        document.getElementById("transerMoney-btn").addEventListener('click', function(){
+        handleToggle('transerMoney')
+        })
+
+
