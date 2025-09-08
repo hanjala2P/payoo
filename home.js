@@ -1,25 +1,8 @@
-// document.getElementById('addMoney').addEventListener('click', function(e){
-//     e.preventDefault()
-//     console.log('btn clicked')
-//     const bank = document.getElementById('bank').value 
-//     const bankAccount =document.getElementById('bankAccount').value
-    
-//     const amount =parseInt(document.getElementById('addAmount').value)
-//     const pin= document.getElementById('password').value
-//     console.log(bank,bankAccount,amount,pin)
-
-//     const availableBalance = parseInt(document.getElementById('balance').innerText)
-//     console.log(availableBalance)
-
-//     const totalNewAvailableBalance = amount +availableBalance
-//     document.getElementById('balance').innerText =totalNewAvailableBalance
-// })
-
-// re capping  feature
-
 // pin number set
 const validPin = 1234
-const validBankAccountNumber = 01604149169
+const validBankAccountNumber = "01604149169"
+const transectionHistory=[]
+
 
 
 
@@ -76,6 +59,13 @@ document.getElementById('addMoney').addEventListener('click', function(e){
     const totalNewAvailableBalance = amount + availableBalance
     // document.getElementById('balance').innerText = totalNewAvailableBalance
     setInnerText(totalNewAvailableBalance)
+      setInnerText(totalNewAvailableBalance)
+    const data ={
+        name:"Add Money",
+        Date:new Date().toLocaleTimeString()
+
+    }
+    transectionHistory.push(data)
    })
 // cash out  money feature
 document.getElementById("withdraw-money-btn").addEventListener('click',function(e){
@@ -100,8 +90,15 @@ document.getElementById("withdraw-money-btn").addEventListener('click',function(
          alert("please provide valid account number")
         return;
     }
+      const data ={
+        name:"Cashout",
+        Date:new Date().toLocaleTimeString()
+
+    }
+    transectionHistory.push(data)
+    
     // document.getElementById("balance").innerText = totalNewAvailableBalance
-    setInnerText(totalNewAvailableBalance)
+  
 })
 // toggleing reusable function code
 
@@ -125,7 +122,38 @@ function handleButtonToggle (id){
              document.getElementById(id).classList.remove("border-gray-300")
              document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]")
 }
+const data ={
+        name:"Transaction",
+        Date:new Date().toLocaleTimeString()
 
+    }
+    transectionHistory.push(data)
+
+document.getElementById("transaction-btn").addEventListener('click', function() {
+    const transactionContiner = document.getElementById("transaction-continer");
+    
+    transactionContiner.innerText = ""; // Clear previous items
+    for(const data of transectionHistory){
+        const div = document.createElement("div");
+        div.innerHTML = `
+         <div id="transaction-continer" class="flex items-center justify-between  min-h-[50px] max-w-lg mx-auto border    border-gray-300 border-gray-300 p-4 rounded-[12px] mb-[12px] ">
+            <div class="flex gap-[4px] items-center justify-center">
+                <div class=" bg-gray-200 h-[48px] w-[48px] rounded-[100px] flex items-center justify-center">
+                    <img class="h-[32px] w-[32px] mx-auto " src="assets/wallet1.png" alt="">
+                </div>
+                <div>
+                    <h2 class="font-bold  text-[#080808] text-[18px]">${data.name}</h2>
+                    <h3 class="text-[#080808] text-[14px]">${data.Date}</h3>
+                </div>
+            </div>
+            <div>
+                <i class="fa-solid fa-ellipsis-vertical "></i>
+            </div>
+            </div>
+        `;
+        transactionContiner.appendChild(div);
+    }
+});
 
 //    toggling features
 
@@ -159,6 +187,27 @@ function handleButtonToggle (id){
         //      }
         //      document.getElementById('transerMoney-btn').classList.remove("border-gray-300")
         //      document.getElementById('transerMoney-btn').classList.add("border-[#0874f2]","bg-[#0874f20d]")
+        })
+
+        document.getElementById("get-bonus-btn").addEventListener('click', function(){
+        handleToggle('transerMoney')
+        handleButtonToggle("get-bonus-btn")
+      
+        })
+        document.getElementById("get-bonus-btn").addEventListener('click', function(){
+        handleToggle('getBounus')
+        handleButtonToggle("get-bonus-btn")
+      
+        })
+        document.getElementById("pay-bill-btn").addEventListener('click', function(){
+        handleToggle('pay-bill')
+        handleButtonToggle("pay-bill-btn")
+      
+        })
+        document.getElementById("transaction-btn").addEventListener('click', function(){
+        handleToggle('transections')
+        handleButtonToggle("transaction-btn")
+      
         })
 
 
