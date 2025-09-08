@@ -58,7 +58,7 @@ document.getElementById('addMoney').addEventListener('click', function(e){
     const pin= getInputValueNumber('password')
     
     const availableBalance = parseInt(document.getElementById('balance').innerText)
-    console.log(amount, availableBalance)
+    // console.log(amount, availableBalance)
 
     if(bankAccount.length<11){
         alert("please provide valid account number")
@@ -86,7 +86,7 @@ document.getElementById("withdraw-money-btn").addEventListener('click',function(
     const bankAccountNumber =getInputValueNumber("bankAccountNumber")
 
     const totalNewAvailableBalance = availableBalance - amount
-    console.log(totalNewAvailableBalance)
+    // console.log(totalNewAvailableBalance)
      if(bankAccount.length<11){
         alert("please provide valid account number")
         return;
@@ -114,18 +114,52 @@ function handleToggle (id){
         document.getElementById(id).style.display ="block"
 }
 
+// toggle  resuable function for select cart
+function handleButtonToggle (id){
+     const serviceBtn = document.getElementsByClassName("service-btn")
+
+             for(const btn of serviceBtn){
+                btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+                btn.classList.add("border-gray-300")
+             }
+             document.getElementById(id).classList.remove("border-gray-300")
+             document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]")
+}
+
 
 //    toggling features
 
      document.getElementById("add-money-btn").addEventListener('click', function(){
              handleToggle('add-money')
+            handleButtonToggle("add-money-btn")
+
+             
     })
 
         document.getElementById("cashout-btn").addEventListener('click', function(){
             handleToggle('cash-out')
+            handleButtonToggle("cashout-btn")
+            // const serviceBtn = document.getElementsByClassName("service-btn")
+
+            //  for(const btn of serviceBtn){
+            //     btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+            //     btn.classList.add("border-gray-300")
+            //  }
+            //  document.getElementById('cashout-btn').classList.remove("border-gray-300")
+            //  document.getElementById('cashout-btn').classList.add("border-[#0874f2]","bg-[#0874f20d]")
         })
         document.getElementById("transerMoney-btn").addEventListener('click', function(){
         handleToggle('transerMoney')
+        handleButtonToggle("transerMoney-btn")
+        //  const serviceBtn = document.getElementsByClassName("service-btn")
+
+        //      for(const btn of serviceBtn){
+        //         btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        //         btn.classList.add("border-gray-300")
+        //      }
+        //      document.getElementById('transerMoney-btn').classList.remove("border-gray-300")
+        //      document.getElementById('transerMoney-btn').classList.add("border-[#0874f2]","bg-[#0874f20d]")
         })
+
 
 

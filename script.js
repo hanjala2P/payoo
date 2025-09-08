@@ -10,7 +10,7 @@ document.getElementById('loginBtn').addEventListener('click',
         const pinNumberValue =document.getElementById('pinNumber').value
         const pinNumberValueConverted =parseInt(pinNumberValue)
 
-        console.log(mobileNumberValueConverted,pinNumberValueConverted)
+        // console.log(mobileNumberValueConverted,pinNumberValueConverted)
 
         if(mobileNumberValueConverted===mobileNumber && pinNumberValueConverted===pinNumber){
             window.location.href="/addMoney.html"
