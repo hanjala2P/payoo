@@ -38,6 +38,10 @@ document.getElementById('addMoney').addEventListener('click', function(e){
     const bankAccount =document.getElementById('bankAccount').value
     
     const amount =getInputValueNumber('addAmount')
+    if(amount<=0){
+        alert("Invalid amount")
+        return;
+    }
     const pin= getInputValueNumber('password')
     
     const availableBalance = parseInt(document.getElementById('balance').innerText)
@@ -72,8 +76,12 @@ document.getElementById("withdraw-money-btn").addEventListener('click',function(
     e.preventDefault()
     const amount = getInputValueNumber("WithdrawAmount")
     const availableBalance =getInnerTextValueNumber("balance")
+    if(amount<=0 || amount>availableBalance){
+        alert("Invalid amount")
+    }
     const WithdrawPassword = getInputValueNumber("WithdrawPassword")
     const bankAccountNumber =getInputValueNumber("bankAccountNumber")
+   
 
     const totalNewAvailableBalance = availableBalance - amount
     // console.log(totalNewAvailableBalance)
@@ -97,7 +105,7 @@ document.getElementById("withdraw-money-btn").addEventListener('click',function(
     }
     transectionHistory.push(data)
     
-    // document.getElementById("balance").innerText = totalNewAvailableBalance
+    document.getElementById("balance").innerText = totalNewAvailableBalance
   
 })
 // toggleing reusable function code
